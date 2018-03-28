@@ -1,0 +1,56 @@
+{
+    "general": {
+        "name": "Otsu Binarization",
+        "description": "Otsu Binarization",
+        "developer": "Marcel Würsch",
+        "affiliation": "University of Fribourg",
+        "email": "marcel.wuersch@unifr.ch",
+        "author": "Nobuyuki Otsu",
+        "DOI": "10.1109/TSMC.1979.4310076",
+        "type": "binarization",
+        "license": "Other",
+        "ownsCopyright": "1"
+    },
+    "input": [
+        {
+            "file": {
+                "name": "inputImage",
+                "description": "The input image to binarize",
+                "options": {
+                    "required": true,
+                    "mimeTypes": {
+											"allowed": ["image/jpeg", "image/png", "image/tiff"],
+											"default": "image/jpeg"
+										}
+                }
+            }
+        },
+        {
+            "outputFolder": {}
+        }
+    ],
+	  "output":[
+			{
+				"file":{
+					"name": "otsuBinaryImage",
+					"type":"image",
+					"description": "Generated Binary Image",
+					"options": {
+						"mimeTypes": {
+							"allowed": ["image/jpeg", "image/png", "image/tiff"],
+							"default": "image/jpeg"
+						},
+						"colorspace":"binary",
+						"visualization":true
+				  }
+				}
+			}
+		],
+    "method": {
+      	"imageType":"docker", 
+		"imageName": "divaservices/otsubinarization",
+		"testData": "https://dl.getdropbox.com/s/l6mobixty0k2o3i/testData.zip",
+		"executableType": "bash",
+        "executable_path": "script.sh"
+    }
+}

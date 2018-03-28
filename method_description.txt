@@ -7,7 +7,8 @@ General:
   affiliation: Affiliation of the developer
   email: Contact email of the developer
   author: authors of a corresponding paper
-  DOI: DOI of a corresponding paper
+  website: link to a project website or similar (optional)
+  DOI: DOI of a corresponding paper (optional)
   type: type of method (e.g. binarization, segmentation, ocr, etc.)
   license: license of the method (e.g. LGPLv2, MIT, etc.)
 
@@ -59,6 +60,7 @@ outputs:
     options:
       visualization: true/false indicating whether this file can serve as visualization of this method
       filename: Exact filename of the generated file (optional)
+      colorspace: [color, binary, grayscale] (optional, if type == "image")
       mimeTypes:
         allowed: comma separated list of mimeTypes this output could produce
         default: default mimeType

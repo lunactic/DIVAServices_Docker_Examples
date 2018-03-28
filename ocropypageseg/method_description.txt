@@ -1,0 +1,49 @@
+Information for Method: METHODNAME
+
+General:
+	name: "Ocropus Page Segmentation",
+	escription: "Wrapper to the page segmentation module from OCRopus (developed by Thomas Breuel)",
+	developer: "Marcel Würsch",
+	affiliation: "University of Fribourg",
+	email: "marcel.wuersch@unifr.ch",
+	author: "Marcel Würsch",
+	website: "https://github.com/tmbdev/ocropy",
+	DOI: "10.1117/12.783598",
+	type: "segmentation",
+	license: "Other",
+
+Inputs:
+  	file: 
+		name: "inputImage",
+		description: "The input image to binarize",
+		options:
+			required: true,
+			mimeTypes:
+				allowed:"image/jpeg","image/png"
+				default: "image/jpeg"
+  
+    outputfolder:
+
+outputs:
+  	file:
+      	name: "segmentationImage",
+		type: "image",
+		description: "Generated Binary Image",
+		options:
+			mimeTypes:
+				allowed:"image/png"
+				default: "image/png"
+
+			colorspace: "color",
+			visualization: true
+		
+	folder:
+		name: "textlines"
+
+
+method:
+  imageName: "divaservices/ocropus_pageseg"
+  testData: "https://dl.getdropbox.com/s/th1llyvmh61tcst/testData.zip"
+  executable_path: "/input/ocropageseg.sh"
+      
+    
